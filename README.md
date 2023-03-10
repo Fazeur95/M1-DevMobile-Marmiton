@@ -7,4 +7,4 @@
 ### Utilisation d'une API de recettes
 
 - https://spoonacular.com/food-api
-- 150 requetes gratuite par jour
+
