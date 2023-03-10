@@ -6,7 +6,7 @@
 ### Création d'une application mobile avec React Native listant des recettes
 
 ## Installation
-### npm install react-native
+### - npm install react-native
 
 ### Utilisation d'une API de recettes
 
