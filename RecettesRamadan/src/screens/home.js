@@ -1,8 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {useFocusEffect} from '@react-navigation/native';
+import {useFocusEffect, useNavigation} from '@react-navigation/native';
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
-import {FlatList, Image} from 'react-native';
+import {FlatList, Image, ScrollView, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
 import RecipeCard from '../components/RecipeCard';
 
@@ -11,6 +11,7 @@ const API_URL = `https://api.spoonacular.com/recipes/random?number=10&apiKey=${A
 
 const Home = () => {
   const [recipes, setRecipes] = useState([]);
+  const navigation = useNavigation();
 
   useEffect(() => {
     axios
@@ -19,14 +20,24 @@ const Home = () => {
       .catch(error => console.error(error));
   }, []);
 
+  const handleRecipePress = recipe => {
+    navigation.navigate('RecipeDetails', {recipe});
+  };
+
   return (
     <Container>
-      <Title>Les recettes du jours</Title>
-      <FlatList
-        data={recipes}
-        keyExtractor={(item, index) => item.id.toString()}
-        renderItem={({item}) => <RecipeCard recipe={item} />}
-      />
+      <Title>Les recettes du jour</Title>
+      <ScrollView>
+        <FlatList
+          data={recipes}
+          keyExtractor={(item, index) => item.id.toString()}
+          renderItem={({item}) => (
+            <TouchableOpacity onPress={() => handleRecipePress(item)}>
+              <RecipeCard recipe={item} />
+            </TouchableOpacity>
+          )}
+        />
+      </ScrollView>
     </Container>
   );
 };

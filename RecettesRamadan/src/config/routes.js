@@ -3,7 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import * as React from 'react';
 import styled from 'styled-components';
 import Home from '../screens/home';
-import Login from '../screens/login';
+import RecipeDetails from '../screens/RecipeDetails';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +16,7 @@ const Routes = () => {
             headerShown: false,
           }}>
           <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="RecipeDetails" component={RecipeDetails} />
         </Stack.Navigator>
       </NavigationContainer>
     </GlobalSafeArea>
