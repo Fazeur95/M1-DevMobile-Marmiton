@@ -4,6 +4,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Home from '../screens/home';
 import RecipeDetails from '../screens/RecipeDetails';
+import Header from '../components/header';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +14,7 @@ const Routes = () => {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{
-            headerShown: false,
+            header: ({navigation}) => <Header navigation={navigation} />,
           }}>
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="RecipeDetails" component={RecipeDetails} />

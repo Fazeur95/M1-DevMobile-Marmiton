@@ -1,46 +1,57 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
-import styled from 'styled-components/native';
-import {useNavigation} from '@react-navigation/native';
+import {Text} from 'react-native';
+import styled from 'styled-components';
 
-const RecipeCard = ({recipe}) => {
-  const navigation = useNavigation();
-
-  const handlePress = () => {
-    navigation.navigate('RecipeDetails', {recipe});
-  };
+const RecipeDetailsComponent = ({recipe}) => {
+  const ingredients = recipe.extendedIngredients.map(
+    ingredient => ingredient.original,
+  );
+  const instructions = recipe.analyzedInstructions[0].steps.map(
+    step => step.step,
+  );
 
   return (
     <Container>
-      <TouchableRecipe onPress={handlePress}>
-        <RecipeImage source={{uri: recipe.image}} />
-        <RecipeTitle>{recipe.title}</RecipeTitle>
-      </TouchableRecipe>
+      <Title>{recipe.title}</Title>
+      <SectionTitle>Ingrédients:</SectionTitle>
+      {ingredients.map((ingredient, index) => (
+        <IngredientText key={index}>{ingredient}</IngredientText>
+      ))}
+      <SectionTitle>Instructions:</SectionTitle>
+      {instructions.map((instruction, index) => (
+        <InstructionText key={index}>
+          {index + 1}. {instruction}
+        </InstructionText>
+      ))}
     </Container>
   );
 };
 
 const Container = styled.View`
-  width: 50%;
-  padding: 10px;
+  flex: 1;
+  padding: 16px;
 `;
 
-const TouchableRecipe = styled.TouchableOpacity`
-  background-color: white;
-  border-radius: 8px;
-  overflow: hidden;
-  elevation: 2;
-`;
-
-const RecipeImage = styled.Image`
-  width: 100%;
-  height: 150px;
-`;
-
-const RecipeTitle = styled.Text`
-  font-size: 16px;
+const Title = styled.Text`
+  font-size: 24px;
   font-weight: bold;
-  padding: 8px;
+  margin-bottom: 16px;
 `;
 
-export default RecipeCard;
+const SectionTitle = styled.Text`
+  font-size: 20px;
+  font-weight: bold;
+  margin-vertical: 8px;
+`;
+
+const IngredientText = styled.Text`
+  font-size: 16px;
+  margin-bottom: 4px;
+`;
+
+const InstructionText = styled.Text`
+  font-size: 16px;
+  margin-bottom: 8px;
+`;
+
+export default RecipeDetailsComponent;
