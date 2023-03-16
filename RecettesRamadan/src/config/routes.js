@@ -4,6 +4,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Home from '../screens/home';
 import RecipeDetails from '../screens/RecipeDetails';
+import AddRecipe from '../components/AddRecipe';
+import AllRecipe from '../screens/AllRecipes';
 import Header from '../components/header';
 
 const Stack = createNativeStackNavigator();
@@ -17,7 +19,9 @@ const Routes = () => {
             header: ({navigation}) => <Header navigation={navigation} />,
           }}>
           <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="AllRecipes" component={AllRecipe} />
           <Stack.Screen name="RecipeDetails" component={RecipeDetails} />
+          <Stack.Screen name="AddRecipe" component={AddRecipe} />
         </Stack.Navigator>
       </NavigationContainer>
     </GlobalSafeArea>

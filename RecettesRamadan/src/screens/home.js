@@ -52,6 +52,8 @@ const Title = styled.Text`
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 16px;
+
+  align-self: center;
 `;
 
 export default Home;
