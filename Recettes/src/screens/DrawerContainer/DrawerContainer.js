@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 import PropTypes from "prop-types";
-import styles from "./styles";
+import styled from 'styled-components/native';
 import MenuButton from "../../components/MenuButton/MenuButton";
 
 export default function DrawerContainer(props) {

@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import { FlatList, Text, View, Image, TouchableHighlight } from "react-native";
-import styles from "./styles";
+import styled from 'styled-components/native';
 import { getIngredientName, getAllIngredients } from "../../data/MockDataAPI";
 
 export default function IngredientsDetailsScreen(props) {
