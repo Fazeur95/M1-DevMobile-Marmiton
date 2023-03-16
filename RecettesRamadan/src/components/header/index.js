@@ -1,21 +1,43 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Image, TouchableOpacity, View, Text} from 'react-native';
 import styled from 'styled-components/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import {useNavigation} from '@react-navigation/native';
 
 const Header = ({title}) => {
   const navigation = useNavigation();
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleMenuPress = () => {
     setMenuOpen(!menuOpen);
+    console.log(setLoggedIn);
   };
 
   const handleNavigate = screen => {
     navigation.navigate(screen);
     setMenuOpen(false);
   };
-
+  const handleLogout = async () => {
+    try {
+      await AsyncStorage.removeItem('isLoggedIn');
+      setIsLoggedIn(false);
+      alert('Vous êtes déconnecté');
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  useEffect(() => {
+    AsyncStorage.getItem('isLoggedIn')
+      .then(value => {
+        if (value === 'true') {
+          setLoggedIn(true);
+        }
+      })
+      .catch(error => console.log(error));
+  }, []);
   return (
     <Container>
       <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -24,7 +46,7 @@ const Header = ({title}) => {
       <TouchableOpacity onPress={() => navigation.navigate('Home')}>
         <Title>MarmiHalal</Title>
       </TouchableOpacity>
-      {menuOpen ? (
+      {menuOpen && (
         <MenuContainer>
           <MenuOption onPress={() => handleNavigate('Home')}>
             <MenuText>Recettes du jour</MenuText>
@@ -35,15 +57,26 @@ const Header = ({title}) => {
           <MenuOption onPress={() => handleNavigate('AddRecipe')}>
             <MenuText>Ajouter une recette</MenuText>
           </MenuOption>
-          <MenuOption onPress={() => handleNavigate('Profile')}>
-            <MenuText>Profil</MenuText>
-          </MenuOption>
+          {loggedIn ? (
+            <MenuOption onPress={() => handleNavigate('Profil')}>
+              <MenuText>Profil</MenuText>
+            </MenuOption>
+          ) : (
+            <MenuOption onPress={() => handleNavigate('Login')}>
+              <MenuText>Login</MenuText>
+            </MenuOption>
+          )}
+
+          {loggedIn && (
+            <MenuOption onPress={() => handleLogout()}>
+              <MenuText>Déconnexion</MenuText>
+            </MenuOption>
+          )}
         </MenuContainer>
-      ) : (
-        <TouchableOpacity onPress={() => handleMenuPress()}>
-          <Logo source={require('../../assets/menu-icon.png')} />
-        </TouchableOpacity>
       )}
+      <TouchableOpacity onPress={() => handleMenuPress()}>
+        <Logo source={require('../../assets/menu-icon.png')} />
+      </TouchableOpacity>
     </Container>
   );
 };

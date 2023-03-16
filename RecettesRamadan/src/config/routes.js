@@ -7,6 +7,8 @@ import RecipeDetails from '../screens/RecipeDetails';
 import AddRecipe from '../components/AddRecipe';
 import AllRecipe from '../screens/AllRecipes';
 import Header from '../components/header';
+import Login from '../screens/login';
+import Profil from '../screens/profil';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +24,8 @@ const Routes = () => {
           <Stack.Screen name="AllRecipes" component={AllRecipe} />
           <Stack.Screen name="RecipeDetails" component={RecipeDetails} />
           <Stack.Screen name="AddRecipe" component={AddRecipe} />
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Profil" component={Profil} />
         </Stack.Navigator>
       </NavigationContainer>
     </GlobalSafeArea>

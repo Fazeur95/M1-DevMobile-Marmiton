@@ -1,85 +1,82 @@
+import React, {useState} from 'react';
+import styled from 'styled-components/native';
+import {useFocusEffect, useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useNavigation } from '@react-navigation/native';
-import axios from 'axios';
-import React from 'react';
-import styled from 'styled-components';
 
-const Login = () => {
+const Profile = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const navigation = useNavigation();
-  const [inputs, setInputs] = React.useState({
-    email: '',
-    password: '',
-  });
 
   const handleLogin = () => {
-    axios({
-      method: 'POST',
-      url: 'https://login.hikkary.com/users/login',
-      data: {
-        username: inputs.email,
-        password: inputs.password,
-      },
-    })
-      .then(res => {
-        console.log(res.headers['x-access-token']);
-        AsyncStorage.setItem('token', res.headers['x-access-token'])
-          .then(() => {
-            navigation.navigate('Home');
-          })
-          .catch(err => {
-            console.log('🚀 ~ file: login.js:6 ~ Login ~ err', err);
-          });
-      })
-      .catch(err => {
-        console.log('🚀 ~ file: login.js:6 ~ Login ~ err', err);
-      });
+    if (username === 'admin' && password === 'admin') {
+      alert('Vous êtes connecté');
+      navigation.navigate('Home');
+      AsyncStorage.setItem('isLoggedIn', 'true');
+    } else {
+      alert('Identifiant ou Mot de passe incorrect');
+    }
   };
 
   return (
     <Container>
-      <StyledText>Login</StyledText>
-      <Touchable onPress={() => navigation.goBack()}>
-        <StyledText>Go Back</StyledText>
-      </Touchable>
-      <InputContainer>
-        <TextInputStyled
-          placeholder="Email"
-          value={inputs.email}
-          onChangeText={text => setInputs({...inputs, email: text})}
+      <Title>Connexion</Title>
+      <Form>
+        <Input
+          placeholder="Nom d'utilisateur"
+          value={username}
+          onChangeText={setUsername}
         />
-      </InputContainer>
-      <InputContainer>
-        <TextInputStyled
-          placeholder="Password"
-          value={inputs.password}
-          onChangeText={text => setInputs({...inputs, password: text})}
+        <Input
+          placeholder="Mot de passe"
+          secureTextEntry
+          value={password}
+          onChangeText={setPassword}
         />
-      </InputContainer>
-      <Touchable onPress={handleLogin}>
-        <StyledText>LOGIN</StyledText>
-      </Touchable>
+        <Button onPress={handleLogin}>
+          <ButtonText>Login</ButtonText>
+        </Button>
+      </Form>
     </Container>
   );
 };
 
-const InputContainer = styled.View`
-  margin: 4px;
-`;
-
-const TextInputStyled = styled.TextInput`
-  background-color: black;
-  padding: 12px;
-  color: white;
-`;
-
-const Touchable = styled.TouchableOpacity``;
-
-const StyledText = styled.Text`
-  color: blue;
-`;
-
 const Container = styled.View`
   flex: 1;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
 `;
 
-export default Login;
+const Title = styled.Text`
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 24px;
+`;
+
+const Form = styled.View`
+  width: 80%;
+`;
+
+const Input = styled.TextInput`
+  height: 48px;
+  border-radius: 24px;
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin-bottom: 16px;
+`;
+
+const Button = styled.TouchableOpacity`
+  height: 48px;
+  border-radius: 24px;
+  background-color: #007bff;
+  align-items: center;
+  justify-content: center;
+`;
+
+const ButtonText = styled.Text`
+  color: #fff;
+  font-size: 18px;
+`;
+
+export default Profile;
