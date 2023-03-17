@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "774800709790",
+    "project_id": "m1-dev-mobile",
+    "storage_bucket": "m1-dev-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774800709790:android:56b4944e70314f7ef2838f",
+        "android_client_info": {
+          "package_name": "com.recettesramadan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774800709790-n7p8spqgh3vcbh4arpjntk1uk9ebf80a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIWEcrcBsVoXG62GdQpPJO7yFGxdC0tE4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774800709790-n7p8spqgh3vcbh4arpjntk1uk9ebf80a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,13 +1,16 @@
 import React, {useState, useEffect} from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, Image, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import axios from 'axios';
 import styled from 'styled-components/native';
 
 const API_KEY = '78759fa899b34b5ea0f2cfba60aacb5e';
 
-const RecipesScreen = ({navigation}) => {
+const RecipesScreen = () => {
   const [recipes, setRecipes] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [favorites, setFavorites] = useState([]);
+  const navigation = useNavigation();
 
   useEffect(() => {
     const fetchRecipes = async () => {
@@ -24,6 +27,7 @@ const RecipesScreen = ({navigation}) => {
   }, [searchQuery]);
 
   const renderRecipe = ({item}) => {
+    const isFavorite = favorites.find(favorite => favorite.id === item.id);
     return (
       <RecipeContainer
         onPress={() =>
@@ -31,8 +35,29 @@ const RecipesScreen = ({navigation}) => {
         }>
         <RecipeImage source={{uri: item.image}} />
         <RecipeTitle>{item.title}</RecipeTitle>
+        <TouchableOpacity onPress={() => addToFavorites(item)}>
+          <FavoriteIcon
+            source={
+              isFavorite
+                ? require('../../assets/heart-filled.png')
+                : require('../../assets/heart-outline.png')
+            }
+          />
+        </TouchableOpacity>
       </RecipeContainer>
     );
+  };
+
+  const addToFavorites = recipe => {
+    const isFavorite = favorites.find(favorite => favorite.id === recipe.id);
+    if (!isFavorite) {
+      setFavorites([...favorites, recipe]);
+    } else {
+      const newFavorites = favorites.filter(
+        favorite => favorite.id !== recipe.id,
+      );
+      setFavorites(newFavorites);
+    }
   };
 
   return (
@@ -80,6 +105,12 @@ const RecipeTitle = styled.Text`
   font-weight: bold;
   margin-top: 10px;
   text-align: center;
+`;
+
+const FavoriteIcon = styled.Image`
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
 `;
 
 export default RecipesScreen;

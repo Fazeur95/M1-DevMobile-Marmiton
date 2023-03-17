@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const AllRecipes = () => {
   return (
     <Container>
-      <Title>Cherchez votre recette</Title>
+      <Title>Nos recettes</Title>
       <Recipes />
     </Container>
   );

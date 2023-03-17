@@ -2,33 +2,69 @@ import React, {useState, useEffect} from 'react';
 import {Image, TouchableOpacity, View, Text} from 'react-native';
 import styled from 'styled-components/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import Notifee from '@notifee/react-native';
 import {useNavigation} from '@react-navigation/native';
+import firebase from '../../config/firebase';
+import {initializeApp} from 'firebase/app';
+import {getAuth, signOut} from 'firebase/auth';
 
 const Header = ({title}) => {
   const navigation = useNavigation();
+  const app = initializeApp(firebase);
+  const auth = getAuth(app);
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const [token, setToken] = useState(null);
 
   const handleMenuPress = () => {
     setMenuOpen(!menuOpen);
     console.log(setLoggedIn);
   };
+  const checkToken = async () => {
+    const token = await AsyncStorage.getItem('token');
+    if (token) {
+      setToken(token);
+    } else {
+      setToken(null);
+    }
+  };
+
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        AsyncStorage.removeItem('token');
+        navigation.navigate('Home');
+        Notifee.displayNotification({
+          title: 'Aurevoir',
+          body: 'Vous êtes déconnecté !',
+          android: {
+            channelId: 'default',
+          },
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+
+  //Vérifier si le token est toujours valide
+  useEffect(() => {
+    checkToken();
+    AsyncStorage.getItem('isLoggedIn')
+      .then(value => {
+        if (value === 'true') {
+          setLoggedIn(true);
+        }
+      })
+      .catch(error => console.log(error));
+  }, []);
 
   const handleNavigate = screen => {
     navigation.navigate(screen);
     setMenuOpen(false);
   };
-  const handleLogout = async () => {
-    try {
-      await AsyncStorage.removeItem('isLoggedIn');
-      setIsLoggedIn(false);
-      alert('Vous êtes déconnecté');
-    } catch (e) {
-      console.error(e);
-    }
-  };
+
   useEffect(() => {
     AsyncStorage.getItem('isLoggedIn')
       .then(value => {
@@ -57,20 +93,27 @@ const Header = ({title}) => {
           <MenuOption onPress={() => handleNavigate('AddRecipe')}>
             <MenuText>Ajouter une recette</MenuText>
           </MenuOption>
-          {loggedIn ? (
-            <MenuOption onPress={() => handleNavigate('Profil')}>
-              <MenuText>Profil</MenuText>
-            </MenuOption>
+          <MenuOption onPress={() => handleNavigate('Favori')}>
+            <MenuText>Mes favoris</MenuText>
+          </MenuOption>
+          {token ? (
+            <>
+              <MenuOption onPress={() => handleNavigate('Profil')}>
+                <MenuText>Profil</MenuText>
+              </MenuOption>
+              <MenuOption onPress={() => handleSignOut()}>
+                <MenuText>Déconnexion</MenuText>
+              </MenuOption>
+            </>
           ) : (
-            <MenuOption onPress={() => handleNavigate('Login')}>
-              <MenuText>Login</MenuText>
-            </MenuOption>
-          )}
-
-          {loggedIn && (
-            <MenuOption onPress={() => handleLogout()}>
-              <MenuText>Déconnexion</MenuText>
-            </MenuOption>
+            <>
+              <MenuOption onPress={() => handleNavigate('Login')}>
+                <MenuText>Login</MenuText>
+              </MenuOption>
+              <MenuOption onPress={() => handleNavigate('Register')}>
+                <MenuText>Register</MenuText>
+              </MenuOption>
+            </>
           )}
         </MenuContainer>
       )}
@@ -80,9 +123,6 @@ const Header = ({title}) => {
     </Container>
   );
 };
-const DropdownMenu = styled.TouchableOpacity`
-  position: relative;
-`;
 
 const MenuContainer = styled.View`
   position: absolute;
