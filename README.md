@@ -12,3 +12,6 @@
 
 - https://spoonacular.com/food-api
 
+### Identifiant pour la connexion 
+- Login : admin
+- Mdp : admin
