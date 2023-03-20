@@ -3,7 +3,7 @@
 #### Projet Solo M1-Dev Faouizi MZEBLA
 
 ## Description
-### Création d'une application mobile avec React Native listant des recettes de cuisines.
+### Création d'une application mobile avec React Native listant des recettes de cuisines et permettant d'en ajouter de nouvelles.
 
 ## Installation
 - npm install
@@ -26,7 +26,9 @@
 
 ![image](https://user-images.githubusercontent.com/56970054/226328718-3b9f3c69-ac53-475e-8593-2ab2335eca59.png)
 
+- Système de Notification avec Notifee lors de l'inscription / connexion et lors de l'ajout d'une recette
 
-### Identifiant pour la connexion 
-- Login : admin
-- Mdp : admin
+- Utilisation de Firebase pour l'inscription et la connexion
+
+
+
