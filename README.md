@@ -15,10 +15,10 @@
 - Firebase : npm install --save @react-native-firebase/app / npm install --save @react-native-firebase/auth
 
 
-## Installation
+## Installation : 
 - npm install
 
-### Utilisation d'une API de recettes
+### Utilisation d'une API de recettes :
 
 - https://spoonacular.com/food-api
 #Attention !
