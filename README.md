@@ -3,7 +3,7 @@
 #### Projet Solo M1-Dev Faouizi MZEBLA
 
 ## Description
-### Création d'une application mobile avec React Native listant des recettes
+### Création d'une application mobile avec React Native listant des recettes de cuisines.
 
 ## Installation
 - npm install
