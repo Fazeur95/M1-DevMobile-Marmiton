@@ -41,7 +41,7 @@
 
 - Système de Notification avec Notifee lors de la déconnexion / connexion et lors de l'ajout d'une recette
 
-- Ajout d'une page Favori avec la possibilité d'ajouter des recettes en favoris pour les voirs sur celle-ci
+- Ajout d'une page Favori pour pouvoir garder de côté les recettes intéressantes
 
 ### Expérimentation :
 
