@@ -15,6 +15,7 @@
 ![image](https://user-images.githubusercontent.com/56970054/226373560-c46b72f6-dccb-463d-aa6f-3e0eefaeeec2.png)
 
 ### Fait : 
+
 - Avoir un routeur
 - Le site doit etre responsive (Mobile First)
 - Avoir un système d'authentification (si nécessaire) Register / Login
@@ -24,15 +25,20 @@
 - Avoir un système de retour utilisateur, notifier les succes/erreurs, faire un affichage en cas de non reponse de l’api, faire un loader durant les call API etc.
 
 ### Bonus :
-- Installation de Expo pour voir l'app directement sur son téléphone (IOS)
-
-![image](https://user-images.githubusercontent.com/56970054/226328718-3b9f3c69-ac53-475e-8593-2ab2335eca59.png)
-
-- Système de Notification avec Notifee lors de l'inscription / connexion et lors de l'ajout d'une recette
 
 - Utilisation de Firebase pour l'inscription et la connexion
 
-- Ajout d'une page Favoris avec la possibilité d'ajouter des recettes en favoris pour les voirs sur celle-ci
+- Création d'une page profil
+
+- Système de Notification avec Notifee lors de la déconnexion / connexion et lors de l'ajout d'une recette
+
+- Ajout d'une page Favori avec la possibilité d'ajouter des recettes en favoris pour les voirs sur celle-ci
+
+### Expérimentation :
+
+- Installation de Expo pour voir l'app directement sur son téléphone (IOS)
+
+![image](https://user-images.githubusercontent.com/56970054/226328718-3b9f3c69-ac53-475e-8593-2ab2335eca59.png) 
 
 
 
