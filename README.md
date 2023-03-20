@@ -49,7 +49,7 @@ Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadaire
 
 - Installation de Expo pour voir l'app directement sur son téléphone (IOS)
 
-![image](https://user-images.githubusercontent.com/56970054/226328718-3b9f3c69-ac53-475e-8593-2ab2335eca59.png) 
+![image](https://user-images.githubusercontent.com/56970054/226435141-739c0d8c-fec1-4b79-aa3a-db24191e7a09.png)
 
 
 
