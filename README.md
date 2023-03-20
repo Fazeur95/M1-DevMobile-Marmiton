@@ -4,6 +4,7 @@
 
 ## Description
 ### Création d'une application mobile avec React Native listant des recettes de cuisines et permettant d'en ajouter de nouvelles.
+![image](https://user-images.githubusercontent.com/56970054/226373560-c46b72f6-dccb-463d-aa6f-3e0eefaeeec2.png)
 
 #### Modules utilisés :
 - Styled-Component : npm install styled-components
@@ -21,7 +22,6 @@
 
 - https://spoonacular.com/food-api
 
-![image](https://user-images.githubusercontent.com/56970054/226373560-c46b72f6-dccb-463d-aa6f-3e0eefaeeec2.png)
 
 ### Fait : 
 
