@@ -5,7 +5,7 @@ import {FlatList, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
 import RecipeCard from '../RecipeCard';
 
-const API_KEY = '1d84e3896b304a139dec822b33e3a929';
+const API_KEY = '67faae398b304dd99cf9b0ec8d7480a8';
 const API_URL = `https://api.spoonacular.com/recipes/random?number=10&apiKey=${API_KEY}`;
 
 const HomeScreen = () => {
@@ -56,7 +56,7 @@ const Title = styled.Text`
   font-weight: bold;
   margin-bottom: 16px;
   text-transform: uppercase;
-  font-family: 'Roboto';
+
   align-self: center;
 `;
 

@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import styled from 'styled-components/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Notifee from '@notifee/react-native';
+
 import {useNavigation} from '@react-navigation/native';
 import firebase from '../../config/firebase';
 import {initializeApp} from 'firebase/app';
@@ -41,13 +41,6 @@ const Header = ({title}) => {
       .then(() => {
         AsyncStorage.removeItem('token');
         navigation.navigate('Home');
-        Notifee.displayNotification({
-          title: 'Aurevoir',
-          body: 'Vous êtes déconnecté !',
-          android: {
-            channelId: 'default',
-          },
-        });
       })
       .catch(error => {
         console.error(error);

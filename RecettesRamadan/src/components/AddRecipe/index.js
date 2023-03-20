@@ -110,7 +110,7 @@ const Title = styled.Text`
   font-size: 24px;
   font-weight: bold;
   color: black;
-  font-family: 'Roboto';
+
   margin-bottom: 16px;
   align-self: center;
 `;

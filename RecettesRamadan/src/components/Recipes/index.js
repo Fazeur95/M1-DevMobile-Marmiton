@@ -6,7 +6,7 @@ import styled from 'styled-components/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Title} from 'react-native-paper';
 
-const API_KEY = '1d84e3896b304a139dec822b33e3a929';
+const API_KEY = '67faae398b304dd99cf9b0ec8d7480a8';
 
 const RecipesScreen = () => {
   const [recipes, setRecipes] = useState([]);
