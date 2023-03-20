@@ -5,6 +5,15 @@
 ## Description
 ### Création d'une application mobile avec React Native listant des recettes de cuisines et permettant d'en ajouter de nouvelles.
 
+#### Modules utilisés :
+- Styled-Component : npm install styled-components
+- React Navigation : npm install @react-navigation/native
+- AsyncStorage : npm install @react-native-async-storage/async-storage
+- Axios : npm install axios
+- Notifee : npm install --save @notifee/react-native
+- Firebase : npm install --save @react-native-firebase/app / npm install --save @react-native-firebase/auth
+
+
 ## Installation
 - npm install
 
