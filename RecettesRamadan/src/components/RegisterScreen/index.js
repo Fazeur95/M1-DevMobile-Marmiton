@@ -5,6 +5,7 @@ import styled from 'styled-components/native';
 import firebase from '../../config/firebase';
 import {initializeApp} from 'firebase/app';
 import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
+import BackGroundImage from '../../assets/register-background.jpg';
 
 const Register = () => {
   const app = initializeApp(firebase);
@@ -41,50 +42,69 @@ const Register = () => {
   };
   return (
     <Container>
-      <InputTitle>Adresse Email</InputTitle>
-      <Input
-        placeholder="Email"
-        value={inputs.email}
-        onChangeText={text => setInputs({...inputs, email: text})}
-        autoCapitalize="none"
-        autoCompleteType="email"
-        keyboardType="email-address"
-      />
-      <InputTitle>Mot de Passe</InputTitle>
-      <Input
-        placeholder="Mot de passe"
-        value={inputs.password}
-        secureTextEntry
-        onChangeText={text => setInputs({...inputs, password: text})}
-      />
-      <InputTitle>Confirmez votre Mot de Passe</InputTitle>
-      <Input
-        placeholder="Confirmez votre mot de passe"
-        value={inputs.password_confirmation}
-        secureTextEntry
-        onChangeText={text =>
-          setInputs({...inputs, password_confirmation: text})
-        }
-      />
-      <Button onPress={HandleRegister}>
-        <ButtonText>Inscription</ButtonText>
-      </Button>
-      <RegisterLink onPress={() => navigation.navigate('Login')}>
-        <RegisterText>Vous avez déjà un compte ? Connectez-vous !</RegisterText>
-      </RegisterLink>
+      <BackGroundImageView source={BackGroundImage}>
+        <ContainerView>
+          <InputTitle>Adresse Email</InputTitle>
+          <Input
+            placeholder="Email"
+            value={inputs.email}
+            onChangeText={text => setInputs({...inputs, email: text})}
+            autoCapitalize="none"
+            autoCompleteType="email"
+            keyboardType="email-address"
+          />
+          <InputTitle>Mot de Passe</InputTitle>
+          <Input
+            placeholder="Mot de passe"
+            value={inputs.password}
+            secureTextEntry
+            onChangeText={text => setInputs({...inputs, password: text})}
+          />
+          <InputTitle>Confirmez votre Mot de Passe</InputTitle>
+          <Input
+            placeholder="Confirmez votre mot de passe"
+            value={inputs.password_confirmation}
+            secureTextEntry
+            onChangeText={text =>
+              setInputs({...inputs, password_confirmation: text})
+            }
+          />
+          <Button onPress={HandleRegister}>
+            <ButtonText>Inscription</ButtonText>
+          </Button>
+          <RegisterLink onPress={() => navigation.navigate('Login')}>
+            <RegisterText>
+              Vous avez déjà un compte ? Connectez-vous !
+            </RegisterText>
+          </RegisterLink>
+        </ContainerView>
+      </BackGroundImageView>
     </Container>
   );
 };
 const Container = styled.View`
   flex: 1;
   background-color: #fff;
-  padding: 30px;
   justify-content: center;
+  align-items: center;
 `;
-
+const ContainerView = styled.View`
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+`;
+const BackGroundImageView = styled.ImageBackground`
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  resize-mode: stretch;
+  margin: 0;
+`;
 const Input = styled.TextInput`
   height: 50px;
-  border: 1px solid #ddd;
+  border: 1px solid #aaa;
   border-radius: 10px;
   padding: 0 20px;
   margin-bottom: 20px;
@@ -108,6 +128,7 @@ const ButtonText = styled.Text`
   font-size: 18px;
   font-weight: bold;
 `;
+
 const RegisterLink = styled.TouchableOpacity`
   margin-top: 20px;
   align-items: center;

@@ -5,6 +5,7 @@ import styled from 'styled-components/native';
 import {getAuth, signInWithEmailAndPassword} from 'firebase/auth';
 import {initializeApp} from 'firebase/app';
 import firebaseConfig from '../../config/firebase';
+import BackGroundImage from '../../assets/login-background.jpg';
 
 const LoginScreen = () => {
   const app = initializeApp(firebaseConfig);
@@ -37,30 +38,34 @@ const LoginScreen = () => {
 
   return (
     <Container>
-      <InputTitle>Adresse Email</InputTitle>
-      <Input
-        placeholder="Email"
-        value={inputs.email}
-        onChangeText={text => setInputs({...inputs, email: text})}
-        autoCapitalize="none"
-        autoCompleteType="email"
-        keyboardType="email-address"
-      />
-      <InputTitle>Mot de Passe</InputTitle>
-      <Input
-        placeholder="Mot de passe"
-        value={inputs.password}
-        secureTextEntry
-        onChangeText={text => setInputs({...inputs, password: text})}
-      />
-      <Button onPress={handleLogin}>
-        <ButtonText>Connexion</ButtonText>
-      </Button>
-      <RegisterLink onPress={() => navigation.navigate('Register')}>
-        <RegisterText>
-          Vous n'avez pas encore de compte ? Inscrivez vous !
-        </RegisterText>
-      </RegisterLink>
+      <BackGroundImageView source={BackGroundImage}>
+        <ContainerView>
+          <InputTitle>Adresse Email</InputTitle>
+          <Input
+            placeholder="Email"
+            value={inputs.email}
+            onChangeText={text => setInputs({...inputs, email: text})}
+            autoCapitalize="none"
+            autoCompleteType="email"
+            keyboardType="email-address"
+          />
+          <InputTitle>Mot de Passe</InputTitle>
+          <Input
+            placeholder="Mot de passe"
+            value={inputs.password}
+            secureTextEntry
+            onChangeText={text => setInputs({...inputs, password: text})}
+          />
+          <Button onPress={handleLogin}>
+            <ButtonText>Connexion</ButtonText>
+          </Button>
+          <RegisterLink onPress={() => navigation.navigate('Register')}>
+            <RegisterText>
+              Vous n'avez pas encore de compte ? Inscrivez vous !
+            </RegisterText>
+          </RegisterLink>
+        </ContainerView>
+      </BackGroundImageView>
     </Container>
   );
 };
@@ -68,13 +73,26 @@ const LoginScreen = () => {
 const Container = styled.View`
   flex: 1;
   background-color: #fff;
-  padding: 30px;
   justify-content: center;
+  align-items: center;
 `;
-
+const ContainerView = styled.View`
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+`;
+const BackGroundImageView = styled.ImageBackground`
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  resize-mode: stretch;
+  margin: 0;
+`;
 const Input = styled.TextInput`
   height: 50px;
-  border: 1px solid #ddd;
+  border: 1px solid #aaa;
   border-radius: 10px;
   padding: 0 20px;
   margin-bottom: 20px;
