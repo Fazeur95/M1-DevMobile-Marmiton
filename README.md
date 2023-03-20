@@ -12,6 +12,8 @@
 
 - https://spoonacular.com/food-api
 
+![image](https://user-images.githubusercontent.com/56970054/226331857-ef005dfb-0fac-4960-a1fa-f7ad2cb2f60a.png)
+
 ### Fait : 
 - Avoir un routeur
 - Le site doit etre responsive (Mobile First)
@@ -29,6 +31,8 @@
 - Système de Notification avec Notifee lors de l'inscription / connexion et lors de l'ajout d'une recette
 
 - Utilisation de Firebase pour l'inscription et la connexion
+
+- Ajout d'une page Favoris avec la possibilité d'ajouter des recettes en favoris pour les voirs sur celle-ci
 
 
 
