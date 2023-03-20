@@ -1,11 +1,12 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button} from 'react-native';
 import styled from 'styled-components/native';
 import firebase from '../../config/firebase';
 import {initializeApp} from 'firebase/app';
 import {getAuth, signOut} from 'firebase/auth';
 import {useNavigation} from '@react-navigation/native';
+import BackgroundImage from '../../assets/profil-background.jpg';
+
 const Profile = () => {
   const app = initializeApp(firebase);
   const auth = getAuth(app);
@@ -37,17 +38,21 @@ const Profile = () => {
 
   return (
     <Container>
-      <ProfileContainer>
-        <AvatarContainer>
-          <AvatarText>{user?.email.substring(0, 1)}</AvatarText>
-        </AvatarContainer>
-        <InfoContainer>
-          <InfoText>Email: {user?.email}</InfoText>
-        </InfoContainer>
-      </ProfileContainer>
-      <LogoutButton onPress={handleSignOut}>
-        <LogoutButtonText>Déconnexion</LogoutButtonText>
-      </LogoutButton>
+      <BackgroundImageView source={BackgroundImage}>
+        <ContainerView>
+          <ProfileContainer>
+            <AvatarContainer>
+              <AvatarText>{user?.email.substring(0, 1)}</AvatarText>
+            </AvatarContainer>
+            <InfoContainer>
+              <InfoText>Email: {user?.email}</InfoText>
+            </InfoContainer>
+          </ProfileContainer>
+          <LogoutButton onPress={handleSignOut}>
+            <LogoutButtonText>Déconnexion</LogoutButtonText>
+          </LogoutButton>
+        </ContainerView>
+      </BackgroundImageView>
     </Container>
   );
 };
@@ -55,9 +60,24 @@ const Profile = () => {
 const Container = styled.View`
   flex: 1;
   background-color: #fff;
-  padding: 30px;
+  justify-content: center;
+  align-items: center;
+`;
+const ContainerView = styled.View`
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
 `;
 
+const BackgroundImageView = styled.ImageBackground`
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  resize-mode: stretch;
+  margin: 0;
+`;
 const ProfileContainer = styled.View`
   flex-direction: row;
   align-items: center;
@@ -80,7 +100,9 @@ const AvatarText = styled.Text`
   font-weight: bold;
 `;
 
-const InfoContainer = styled.View``;
+const InfoContainer = styled.View`
+  justify-content: center;
+`;
 
 const InfoText = styled.Text`
   font-size: 18px;

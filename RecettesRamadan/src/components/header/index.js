@@ -109,10 +109,10 @@ const Header = ({title}) => {
           ) : (
             <>
               <MenuOption onPress={() => handleNavigate('Login')}>
-                <MenuText>Login</MenuText>
+                <MenuText>Connexion</MenuText>
               </MenuOption>
               <MenuOption onPress={() => handleNavigate('Register')}>
-                <MenuText>Register</MenuText>
+                <MenuText>Inscription</MenuText>
               </MenuOption>
             </>
           )}
