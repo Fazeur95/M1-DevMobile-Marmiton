@@ -22,7 +22,7 @@
 - Avoir un système de retour utilisateur, notifier les succes/erreurs, faire un affichage en cas de non reponse de l’api, faire un loader durant les call API etc.
 
 ### Bonus :
-- Installation de Expo pour voir l'app directement sur son téléphone
+- Installation de Expo pour voir l'app directement sur son téléphone (IOS)
 
 ![image](https://user-images.githubusercontent.com/56970054/226328718-3b9f3c69-ac53-475e-8593-2ab2335eca59.png)
 
