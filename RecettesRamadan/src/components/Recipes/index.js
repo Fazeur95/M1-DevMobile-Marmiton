@@ -79,6 +79,10 @@ const RecipesScreen = () => {
         placeholder="Cherchez votre recette..."
         onChangeText={setSearchQuery}
       />
+      <SearchIcon
+        source={require('../../assets/search-icon.png')}
+        onChangeText={setSearchQuery}
+      />
       <FlatList
         data={recipes}
         renderItem={renderRecipe}
@@ -91,6 +95,14 @@ const RecipesScreen = () => {
 const Container = styled.View`
   flex: 1;
   background-color: #fff;
+`;
+
+const SearchIcon = styled.Image`
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 16px;
+  top: 16px;
 `;
 
 const SearchInput = styled.TextInput`
