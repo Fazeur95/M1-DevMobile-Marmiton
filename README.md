@@ -4,6 +4,16 @@
 
 ## Description
 ### Création d'une application mobile avec React Native listant des recettes de cuisines et permettant d'en ajouter de nouvelles.
+![image](https://user-images.githubusercontent.com/56970054/226373560-c46b72f6-dccb-463d-aa6f-3e0eefaeeec2.png)
+
+#### Modules utilisés :
+- Styled-Component : npm install styled-components
+- React Navigation : npm install @react-navigation/native
+- AsyncStorage : npm install @react-native-async-storage/async-storage
+- Axios : npm install axios
+- Notifee : npm install --save @notifee/react-native
+- Firebase : npm install --save @react-native-firebase/app / npm install --save @react-native-firebase/auth
+
 
 ## Installation
 - npm install
@@ -12,7 +22,6 @@
 
 - https://spoonacular.com/food-api
 
-![image](https://user-images.githubusercontent.com/56970054/226373560-c46b72f6-dccb-463d-aa6f-3e0eefaeeec2.png)
 
 ### Fait : 
 
