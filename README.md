@@ -3,8 +3,8 @@
 #### Projet Solo M1-Dev Faouizi MZEBLA
 
 ## Description
-### Création d'une application mobile avec React Native listant des recettes de cuisines et permettant d'en ajouter de nouvelles.
-![image](https://user-images.githubusercontent.com/56970054/226373560-c46b72f6-dccb-463d-aa6f-3e0eefaeeec2.png)
+### Création d'une application mobile en React Native listant des recettes de cuisines et permettant d'en ajouter de nouvelles.
+![image](https://user-images.githubusercontent.com/56970054/226432929-538ac5eb-77c1-4752-8773-befa60a37e7f.png)
 
 #### Modules utilisés :
 - Styled-Component : npm install styled-components
@@ -15,13 +15,15 @@
 - Firebase : npm install --save @react-native-firebase/app / npm install --save @react-native-firebase/auth
 
 
-## Installation
+## Installation : 
 - npm install
 
-### Utilisation d'une API de recettes
+### Utilisation d'une API de recettes :
 
 - https://spoonacular.com/food-api
 
+# Attention !
+Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadaire. Veuillez me contactez si ce problème intervient.
 
 ### Fait : 
 
@@ -41,13 +43,13 @@
 
 - Système de Notification avec Notifee lors de la déconnexion / connexion et lors de l'ajout d'une recette
 
-- Ajout d'une page Favori avec la possibilité d'ajouter des recettes en favoris pour les voirs sur celle-ci
+- Ajout d'une page Favori pour pouvoir garder de côté les recettes intéressantes
 
 ### Expérimentation :
 
 - Installation de Expo pour voir l'app directement sur son téléphone (IOS)
 
-![image](https://user-images.githubusercontent.com/56970054/226328718-3b9f3c69-ac53-475e-8593-2ab2335eca59.png) 
+![image](https://user-images.githubusercontent.com/56970054/226435141-739c0d8c-fec1-4b79-aa3a-db24191e7a09.png)
 
 
 
