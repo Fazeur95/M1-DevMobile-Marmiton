@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components/native';
-import {Ionicons} from '@expo/vector-icons';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -46,12 +44,15 @@ const Footer = () => {
 
   return (
     <FooterContainer>
-      <ProfilButton onPress={() => navigation.navigate('Profil')}>
-        <Logo source={require('../../assets/profil-icon.png')} />
-      </ProfilButton>
       <HomeButton onPress={() => navigation.navigate('Home')}>
         <Logo source={require('../../assets/home-icon.png')} />
       </HomeButton>
+      <SearchButton onPress={() => navigation.navigate('AllRecipes')}>
+        <Logo source={require('../../assets/search-icon.png')} />
+      </SearchButton>
+      <AddButton onPress={() => navigation.navigate('AddRecipe')}>
+        <Logo source={require('../../assets/add-icon.png')} />
+      </AddButton>
       <FavoriteButton onPress={() => navigation.navigate('Favori')}>
         <Logo source={require('../../assets/heart-outline.png')} />
 
@@ -59,10 +60,26 @@ const Footer = () => {
           <FavoriteNumber>{favoriteNumber}</FavoriteNumber>
         )}
       </FavoriteButton>
+      <ProfilButton onPress={() => navigation.navigate('Profil')}>
+        <Logo source={require('../../assets/profil-icon.png')} />
+      </ProfilButton>
     </FooterContainer>
   );
 };
-
+const SearchButton = styled.TouchableOpacity`
+  flex-direction: row;
+  align-items: center;
+  border-radius: 20px;
+  padding-horizontal: 12px;
+  padding-vertical: 8px;
+`;
+const AddButton = styled.TouchableOpacity`
+  flex-direction: row;
+  align-items: center;
+  border-radius: 20px;
+  padding-horizontal: 12px;
+  padding-vertical: 8px;
+`;
 const FavoriteNumber = styled.Text`
   position: absolute;
   top: -10px;
@@ -83,6 +100,7 @@ const FooterContainer = styled.View`
   padding: 12px;
   flex-direction: row;
   justify-content: space-between;
+  box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.25);
 `;
 
 const ProfilButton = styled.TouchableOpacity`

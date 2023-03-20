@@ -21,6 +21,7 @@ const Title = styled.Text`
   font-weight: bold;
   margin-bottom: 16px;
   align-self: center;
+  text-transform: uppercase;
 `;
 
 export default AllRecipes;

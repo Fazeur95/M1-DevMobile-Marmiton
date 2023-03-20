@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, TouchableOpacity, View} from 'react-native';
+import {FlatList, TouchableOpacity} from 'react-native';
 import styled from 'styled-components/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import RecipeCard from '../RecipeCard';
@@ -58,7 +58,15 @@ const FavoriteRecipes = () => {
           )}
         />
       ) : (
-        <NoFavoriteText>Aucune recette favorite pour le moment</NoFavoriteText>
+        <ContainerNoFavori>
+          <NoFavoriteText>
+            Aucune recette favorite pour le moment
+          </NoFavoriteText>
+
+          <TouchableOpacity onPress={() => navigation.navigate('AllRecipes')}>
+            <GoBackHome>Cherchez votre bonheur ici</GoBackHome>
+          </TouchableOpacity>
+        </ContainerNoFavori>
       )}
     </Container>
   );
@@ -69,11 +77,25 @@ const Container = styled.View`
   background-color: white;
   padding: 16px;
 `;
+const ContainerNoFavori = styled.View`
+  flex: 1;
+  background-color: white;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+`;
 const RemoveButton = styled.TouchableOpacity`
   background-color: #f44336;
   padding: 8px;
   margin: 8px;
   border-radius: 8px;
+`;
+const GoBackHome = styled.Text`
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 16px;
+  color: #2f80ed;
 `;
 const RemoveButtonText = styled.Text`
   color: white;

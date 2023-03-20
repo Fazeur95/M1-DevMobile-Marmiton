@@ -10,7 +10,9 @@ import BackgroundImage from '../../assets/profil-background.jpg';
 const Profile = () => {
   const app = initializeApp(firebase);
   const auth = getAuth(app);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
+  const [token, setToken] = useState(null);
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -25,6 +27,28 @@ const Profile = () => {
     return unsubscribe;
   }, [auth]);
 
+  //Check if user is logged in if yes redirect to home
+
+  const checkToken = async () => {
+    const token = await AsyncStorage.getItem('token');
+    if (token) {
+      setToken(token);
+    } else {
+      setToken(null);
+    }
+  };
+
+  useEffect(() => {
+    checkToken();
+    AsyncStorage.getItem('isLoggedIn')
+      .then(value => {
+        if (value === 'true') {
+          setLoggedIn(true);
+        }
+      })
+      .catch(error => console.log(error));
+  }, []);
+
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -38,21 +62,38 @@ const Profile = () => {
 
   return (
     <Container>
-      <BackgroundImageView source={BackgroundImage}>
-        <ContainerView>
-          <ProfileContainer>
-            <AvatarContainer>
-              <AvatarText>{user?.email.substring(0, 1)}</AvatarText>
-            </AvatarContainer>
-            <InfoContainer>
-              <InfoText>Email: {user?.email}</InfoText>
-            </InfoContainer>
-          </ProfileContainer>
-          <LogoutButton onPress={handleSignOut}>
-            <LogoutButtonText>Déconnexion</LogoutButtonText>
-          </LogoutButton>
-        </ContainerView>
-      </BackgroundImageView>
+      {token ? (
+        <BackgroundImageView source={BackgroundImage}>
+          <ContainerView>
+            <ProfileContainer>
+              <AvatarContainer>
+                <AvatarText>{user?.email.substring(0, 1)}</AvatarText>
+              </AvatarContainer>
+              <InfoContainer>
+                <InfoText>Email: {user?.email}</InfoText>
+              </InfoContainer>
+            </ProfileContainer>
+            <LogoutButton onPress={handleSignOut}>
+              <LogoutButtonText>Déconnexion</LogoutButtonText>
+            </LogoutButton>
+          </ContainerView>
+        </BackgroundImageView>
+      ) : (
+        <BackgroundImageView source={BackgroundImage}>
+          <ContainerView>
+            <NotLoggedText>
+              Inscrivez-vous ou connectez-vous pour accèder a votre profil
+            </NotLoggedText>
+
+            <RegisterLink onPress={() => navigation.navigate('Login')}>
+              <LoginText>Se connecter</LoginText>
+            </RegisterLink>
+            <RegisterLink onPress={() => navigation.navigate('Register')}>
+              <RegisterText>S'inscrire</RegisterText>
+            </RegisterLink>
+          </ContainerView>
+        </BackgroundImageView>
+      )}
     </Container>
   );
 };
@@ -63,6 +104,30 @@ const Container = styled.View`
   justify-content: center;
   align-items: center;
 `;
+const LoginText = styled.Text`
+  color: #2f80ed;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+`;
+const RegisterText = styled.Text`
+  color: #2f80ed;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+`;
+
+const NotLoggedText = styled.Text`
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+
+  text-align: center;
+`;
+const RegisterLink = styled.TouchableOpacity`
+  margin-top: 20px;
+`;
+
 const ContainerView = styled.View`
   width: 100%;
   padding: 20px;

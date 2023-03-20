@@ -86,7 +86,7 @@ const Header = ({title}) => {
         <BackButton source={require('../../assets/back-arrow.png')} />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-        <Title>MarmYnov</Title>
+        <Logo source={require('../../assets/logo.png')}></Logo>
       </TouchableOpacity>
       {menuOpen && (
         <MenuContainer>
@@ -119,12 +119,20 @@ const Header = ({title}) => {
         </MenuContainer>
       )}
       <TouchableOpacity onPress={() => handleMenuPress()}>
-        <Logo source={require('../../assets/menu-icon.png')} />
+        <HamburgerMenu source={require('../../assets/menu-icon.png')} />
       </TouchableOpacity>
     </Container>
   );
 };
-
+const Logo = styled.Image`
+  width: 50px;
+  height: 50px;
+`;
+const HamburgerMenu = styled.Image`
+  width: 40px;
+  height: 40px;
+  align-self: center;
+`;
 const MenuContainer = styled.View`
   position: absolute;
   top: 60px;
@@ -151,31 +159,27 @@ const MenuText = styled.Text`
   font-size: 18px;
 `;
 const Container = styled.View`
-  height: 60px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
-  elevation: 2;
-  background-color: #ff6f61;
+  padding: 10px;
+  background-color: #ffffff;
+  shadow-color: #000000;
+  shadow-offset: {
+    width: 0,
+    height: 2,
+  };
+  shadow-opacity: 0.25;
+  shadow-radius: 3.84;
+  elevation: 5;
+  z-index: 1;
+  
 `;
 
 const BackButton = styled.Image`
   width: 24px;
   height: 24px;
   align-self: center;
-`;
-
-const Title = styled.Text`
-  font-size: 20px;
-  font-weight: bold;
-  color: black;
-`;
-
-const Logo = styled.Image`
-  width: 55px;
-  height: 55px;
-  justify-content: center;
 `;
 
 export default Header;

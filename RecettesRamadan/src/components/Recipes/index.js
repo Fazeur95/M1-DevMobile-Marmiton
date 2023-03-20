@@ -4,6 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import axios from 'axios';
 import styled from 'styled-components/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {Title} from 'react-native-paper';
 
 const API_KEY = '1d84e3896b304a139dec822b33e3a929';
 

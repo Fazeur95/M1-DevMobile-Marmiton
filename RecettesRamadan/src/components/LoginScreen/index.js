@@ -79,7 +79,7 @@ const Container = styled.View`
 const ContainerView = styled.View`
   width: 100%;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
 `;
 const BackGroundImageView = styled.ImageBackground`
   flex: 1;

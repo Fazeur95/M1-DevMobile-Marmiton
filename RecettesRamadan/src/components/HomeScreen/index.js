@@ -55,7 +55,8 @@ const Title = styled.Text`
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 16px;
-
+  text-transform: uppercase;
+  font-family: 'Roboto';
   align-self: center;
 `;
 
