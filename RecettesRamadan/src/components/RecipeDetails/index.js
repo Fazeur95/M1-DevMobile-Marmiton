@@ -3,12 +3,12 @@ import {Text} from 'react-native';
 import styled from 'styled-components';
 
 const RecipeDetailsComponent = ({recipe}) => {
-  const ingredients = recipe.extendedIngredients.map(
-    ingredient => ingredient.original,
-  );
-  const instructions = recipe.analyzedInstructions[0].steps.map(
-    step => step.step,
-  );
+  const ingredients = recipe.extendedIngredients
+    ? recipe.extendedIngredients.map(ingredient => ingredient.original)
+    : [];
+  const instructions = recipe.analyzedInstructions[0].steps
+    ? recipe.analyzedInstructions[0].steps.map(step => step.step)
+    : [];
 
   return (
     <Container>

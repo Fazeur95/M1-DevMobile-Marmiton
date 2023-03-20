@@ -1,3 +1,7 @@
+//Create a RecipeCard component
+
+// Path: src\components\RecipeCard\index.js
+
 import React from 'react';
 import {View, Text, Image} from 'react-native';
 import styled from 'styled-components/native';
@@ -6,39 +10,36 @@ const RecipeCard = ({recipe}) => {
   return (
     <Container>
       <ImageContainer>
-        <RecipeImage source={{uri: recipe.image}} />
+        <Image
+          source={{uri: recipe.image}}
+          style={{width: 100, height: 100, borderRadius: 10}}
+        />
       </ImageContainer>
-      <Title>{recipe.title}</Title>
-      <Subtitle>{recipe.description}</Subtitle>
+      <TextContainer>
+        <Title>{recipe.title}</Title>
+        <Text>{recipe.readyInMinutes} minutes</Text>
+      </TextContainer>
     </Container>
   );
 };
 
 const Container = styled.View`
-  background-color: white;
-  border-radius: 8px;
+  flex-direction: row;
   margin-bottom: 16px;
-  overflow: hidden;
 `;
 
 const ImageContainer = styled.View`
-  height: 150px;
+  flex: 1;
 `;
 
-const RecipeImage = styled.Image`
-  height: 100%;
-  width: 100%;
+const TextContainer = styled.View`
+  flex: 2;
+  padding-left: 16px;
 `;
 
 const Title = styled.Text`
   font-size: 18px;
   font-weight: bold;
-  margin: 16px;
-`;
-
-const Subtitle = styled.Text`
-  font-size: 16px;
-  margin: 0 16px 16px;
 `;
 
 export default RecipeCard;

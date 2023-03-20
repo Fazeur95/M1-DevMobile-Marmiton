@@ -6,7 +6,7 @@ import {FlatList, Image, ScrollView, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
 import RecipeCard from '../RecipeCard';
 
-const API_KEY = '78759fa899b34b5ea0f2cfba60aacb5e';
+const API_KEY = '1d84e3896b304a139dec822b33e3a929';
 const API_URL = `https://api.spoonacular.com/recipes/random?number=10&apiKey=${API_KEY}`;
 
 const HomeScreen = () => {
@@ -27,7 +27,7 @@ const HomeScreen = () => {
   return (
     <Container>
       <Title>Les recettes du jour</Title>
-      <ScrollView>
+      <StyledView>
         <FlatList
           data={recipes}
           keyExtractor={(item, index) => item.id.toString()}
@@ -37,7 +37,7 @@ const HomeScreen = () => {
             </TouchableOpacity>
           )}
         />
-      </ScrollView>
+      </StyledView>
     </Container>
   );
 };
@@ -47,7 +47,11 @@ const Container = styled.View`
   background-color: white;
   padding: 16px;
 `;
-
+const StyledView = styled.View`
+  flex: 1;
+  background-color: white;
+  padding: 16px;
+`;
 const Title = styled.Text`
   font-size: 24px;
   font-weight: bold;

@@ -1,5 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {Image, TouchableOpacity, View, Text} from 'react-native';
+import {
+  Image,
+  TouchableOpacity,
+  useFocusEffect,
+  View,
+  Text,
+} from 'react-native';
 import styled from 'styled-components/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Notifee from '@notifee/react-native';
@@ -80,22 +86,17 @@ const Header = ({title}) => {
         <BackButton source={require('../../assets/back-arrow.png')} />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-        <Title>MarmiHalal</Title>
+        <Title>MarmYnov</Title>
       </TouchableOpacity>
       {menuOpen && (
         <MenuContainer>
-          <MenuOption onPress={() => handleNavigate('Home')}>
-            <MenuText>Recettes du jour</MenuText>
-          </MenuOption>
           <MenuOption onPress={() => handleNavigate('AllRecipes')}>
             <MenuText>Toute nos recettes</MenuText>
           </MenuOption>
           <MenuOption onPress={() => handleNavigate('AddRecipe')}>
             <MenuText>Ajouter une recette</MenuText>
           </MenuOption>
-          <MenuOption onPress={() => handleNavigate('Favori')}>
-            <MenuText>Mes favoris</MenuText>
-          </MenuOption>
+
           {token ? (
             <>
               <MenuOption onPress={() => handleNavigate('Profil')}>

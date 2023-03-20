@@ -11,6 +11,7 @@ import Login from '../screens/login';
 import Profil from '../screens/profil';
 import Register from '../screens/register';
 import Favori from '../screens/favori';
+import Footer from '../components/footer';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,7 @@ const Routes = () => {
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Profil" component={Profil} />
         </Stack.Navigator>
+        <Footer />
       </NavigationContainer>
     </GlobalSafeArea>
   );

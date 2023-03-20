@@ -13,7 +13,7 @@ const FavoriteRecipes = () => {
     // Récupération des recettes favorites depuis AsyncStorage
     const getFavoriteRecipes = async () => {
       try {
-        const jsonValue = await AsyncStorage.getItem('@favoriteRecipes');
+        const jsonValue = await AsyncStorage.getItem('favorites');
         if (jsonValue != null) {
           setFavoriteRecipes(JSON.parse(jsonValue));
         }
@@ -31,15 +31,11 @@ const FavoriteRecipes = () => {
   };
 
   const handleRemoveFavorite = async recipe => {
-    // Suppression de la recette favorite de AsyncStorage
     try {
-      const jsonValue = await AsyncStorage.getItem('@favoriteRecipes');
+      const jsonValue = await AsyncStorage.getItem('favorites');
       const value = JSON.parse(jsonValue);
       const updatedValue = value.filter(item => item.id !== recipe.id);
-      await AsyncStorage.setItem(
-        '@favoriteRecipes',
-        JSON.stringify(updatedValue),
-      );
+      await AsyncStorage.setItem('favorites', JSON.stringify(updatedValue));
       setFavoriteRecipes(updatedValue);
     } catch (e) {
       console.error(e);
@@ -85,6 +81,8 @@ const RemoveButtonText = styled.Text`
 `;
 const NoFavoriteText = styled.Text`
   text-align: center;
+  font-size: 18px;
+  font-weight: bold;
 `;
 
 export default FavoriteRecipes;
