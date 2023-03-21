@@ -1,7 +1,5 @@
-# **M1-DevMobile-Marmiton** 
+# **Projet Solo M1-DevMobile Faouizi MZEBLA** 
 ![logo](https://user-images.githubusercontent.com/56970054/226587270-6a25990f-0b1f-4e14-844f-43739af20f02.png)
-
-#### Projet Solo M1-Dev Faouizi MZEBLA
 
 ## Description
 ### Création d'une application mobile en React Native listant des recettes de cuisines et permettant d'en ajouter de nouvelles.
