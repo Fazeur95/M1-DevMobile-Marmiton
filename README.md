@@ -29,8 +29,8 @@
 Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadaire. Veuillez me contactez si ce problème intervient.
 
 ### Fait : 
-- 
-- [x]  Avoir un routeur
+
+- [x] <https://github.com/octo-org/octo-repo/issues/740> Avoir un routeur
 - [x] Le site doit etre responsive (Mobile First)
 - [x] Avoir un système d'authentification (si nécessaire) Register / Login
 - [x] Utiliser les styled-Components
