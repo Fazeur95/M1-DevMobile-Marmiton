@@ -35,6 +35,16 @@ Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadaire
 - [x] Avoir les normes récentes de code (ES6+)
 - [x] Avoir un système de retour utilisateur, notifier les succes/erreurs, faire un affichage en cas de non reponse de l’api, faire un loader durant les call API etc.
 
+<details>
+<summary>My top languages</summary>
+
+| Rank | Languages |
+|-----:|-----------|
+|     1| Javascript|
+|     2| Python    |
+|     3| SQL       |
+
+</details>
 ### Bonus :
 
 - Utilisation de Firebase pour l'inscription et la connexion
