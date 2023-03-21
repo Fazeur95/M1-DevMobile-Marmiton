@@ -1,7 +1,12 @@
 {
   "name": "RecettesRamadan",
   "displayName": "RecettesRamadan",
-  "plugins": [ 
-    
-  ]
+  "plugins": [],
+  "extra": {
+    "eas": {
+      "projectId": "c08fa3b3-cd86-475e-8d36-852c9f412a30"
+    }
+  },
+  "owner": "fazeur95",
+  "slug": "marmynov"
 }
