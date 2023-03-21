@@ -88,7 +88,9 @@ const AddRecipe = ({navigation}) => {
               numberOfLines={4}
               keyboardType="default"
             />
-            <StyledButton title="Ajouter la recette" onPress={handleSubmit} />
+            <StyledButton onPress={() => handleSubmit}>
+              <StyledButtonText>Ajouter</StyledButtonText>
+            </StyledButton>
           </Form>
         </ScrollView>
       </ContainerView>
@@ -116,8 +118,18 @@ const BackgroundImageView = styled.ImageBackground`
   margin: 0;
 `;
 
-const StyledButton = styled.Button`
+const StyledButton = styled.TouchableOpacity`
   background-color: #f4511e;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 8px;
+`;
+
+const StyledButtonText = styled.Text`
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
 `;
 
 const Title = styled.Text`
@@ -130,11 +142,12 @@ const Title = styled.Text`
 `;
 
 const StyledTextInput = styled.TextInput`
-  border: 1px solid #ccc;
+  height: 40px;
+  border-color: #ccc;
+  border-width: 1px;
   border-radius: 4px;
-  color: black;
-  margin-bottom: 16px;
   padding: 8px;
+  margin: 8px;
 `;
 
 const Form = styled.View`
