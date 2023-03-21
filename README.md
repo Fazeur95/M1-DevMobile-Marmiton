@@ -38,18 +38,6 @@ Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadaire
 
 ### Bonus :
 
-<details>
-<summary></summary>
-
-| Tâches | Explication |
-|-----:|-----------|
-|Firebase| Utilisation de Firebase pour l'inscription et la connexion|
-|Profil| Création d'une page Profil    |
-|Notification| Système de Notification avec Notifee lors de la déconnexion / connexion et lors de l'ajout d'une recette       |
-|Favori| Ajout d'une page Favori pour pouvoir garder de côté les recettes intéressantes       |
-
-</details>
-
 - Utilisation de Firebase pour l'inscription et la connexion
 
 - Création d'une page profil
