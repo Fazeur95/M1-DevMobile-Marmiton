@@ -1,7 +1,5 @@
-# **M1-DevMobile-Marmiton** 
+# **Projet Solo M1-DevMobile Faouizi MZEBLA** 
 ![logo](https://user-images.githubusercontent.com/56970054/226587270-6a25990f-0b1f-4e14-844f-43739af20f02.png)
-
-#### Projet Solo M1-Dev Faouizi MZEBLA
 
 ## Description
 ### Création d'une application mobile en React Native listant des recettes de cuisines et permettant d'en ajouter de nouvelles.
@@ -24,8 +22,7 @@
 
 - https://spoonacular.com/food-api
 
-# Attention !
-Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadaire. Veuillez me contactez si ce problème intervient.
+_Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadaire._
 
 ### Fait : 
 
@@ -33,9 +30,10 @@ Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadaire
 - [x] Le site doit etre responsive (Mobile First)
 - [x] Avoir un système d'authentification (si nécessaire) Register / Login
 - [x] Utiliser les styled-Components
-- [x] être codé proprement (avoir une structure propre de code et bien découper ses composants)
+- [x] Être codé proprement (avoir une structure propre de code et bien découper ses composants)
 - [x] Avoir les normes récentes de code (ES6+)
 - [x] Avoir un système de retour utilisateur, notifier les succes/erreurs, faire un affichage en cas de non reponse de l’api, faire un loader durant les call API etc.
+
 
 ### Bonus :
 
