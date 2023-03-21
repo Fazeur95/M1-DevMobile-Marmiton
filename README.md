@@ -36,13 +36,14 @@ Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadaire
 - [x] Avoir un système de retour utilisateur, notifier les succes/erreurs, faire un affichage en cas de non reponse de l’api, faire un loader durant les call API etc.
 
 <details>
-<summary>My top languages</summary>
+<summary>Bonus</summary>
 
-| Rank | Languages |
+| Tâches | Languages |
 |-----:|-----------|
-|     1| Javascript|
-|     2| Python    |
-|     3| SQL       |
+|     Firebase| Utilisation de Firebase pour l'inscription et la connexion|
+|     Profil| Création d'une page Profil    |
+|     Notification| Système de Notification avec Notifee lors de la déconnexion / connexion et lors de l'ajout d'une recette       |
+|     Favori| Ajout d'une page Favori pour pouvoir garder de côté les recettes intéressantes       |
 
 </details>
 ### Bonus :
