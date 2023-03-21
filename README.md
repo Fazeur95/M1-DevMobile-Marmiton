@@ -1,6 +1,4 @@
-# M1-DevMobile-Marmiton / MarmYnov Les recettes qui Ynov
-
-![logo](https://user-images.githubusercontent.com/56970054/226587270-6a25990f-0b1f-4e14-844f-43739af20f02.png)
+# **M1-DevMobile-Marmiton** ![logo](https://user-images.githubusercontent.com/56970054/226587270-6a25990f-0b1f-4e14-844f-43739af20f02.png)
 
 #### Projet Solo M1-Dev Faouizi MZEBLA
 
@@ -30,7 +28,7 @@ Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadaire
 
 ### Fait : 
 
-- [x] <https://github.com/octo-org/octo-repo/issues/740> Avoir un routeur
+- [x] Avoir un routeur
 - [x] Le site doit etre responsive (Mobile First)
 - [x] Avoir un système d'authentification (si nécessaire) Register / Login
 - [x] Utiliser les styled-Components
