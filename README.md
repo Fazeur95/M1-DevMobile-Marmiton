@@ -17,7 +17,7 @@
 
 
 ## Installation : 
-- npm install
+- `npm install`
 
 ### Utilisation d'une API de recettes :
 
