@@ -29,7 +29,7 @@
 Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadaire. Veuillez me contactez si ce problème intervient.
 
 ### Fait : 
-
+- [ Avoir un routeur ]
 - Avoir un routeur
 - Le site doit etre responsive (Mobile First)
 - Avoir un système d'authentification (si nécessaire) Register / Login
