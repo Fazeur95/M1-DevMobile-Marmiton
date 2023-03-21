@@ -78,9 +78,11 @@ const Header = ({title}) => {
       <TouchableOpacity onPress={() => navigation.goBack()}>
         <BackButton source={require('../../assets/back-arrow.png')} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-        <Logo source={require('../../assets/logo.png')}></Logo>
-      </TouchableOpacity>
+      <LogoTouchable onPress={() => navigation.navigate('Home')}>
+        <Logo
+          source={require('../../assets/logo.png')}
+          resizeMode="contain"></Logo>
+      </LogoTouchable>
       {menuOpen && (
         <MenuContainer>
           <MenuOption onPress={() => handleNavigate('AllRecipes')}>
@@ -117,9 +119,15 @@ const Header = ({title}) => {
     </Container>
   );
 };
+
 const Logo = styled.Image`
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
+`;
+
+const LogoTouchable = styled.TouchableOpacity`
+  flex 1;
+ 
 `;
 const HamburgerMenu = styled.Image`
   width: 40px;
@@ -166,6 +174,7 @@ const Container = styled.View`
   shadow-radius: 3.84;
   elevation: 5;
   z-index: 1;
+  width: 100%;
   
 `;
 

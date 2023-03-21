@@ -37,44 +37,56 @@ const AddRecipe = ({navigation}) => {
   return (
     <BackgroundImageView source={BackgroundImage}>
       <ContainerView>
-        <Title>Ajouter une recette</Title>
         <ScrollView>
           <Form>
+            <Title>Ajouter une recette</Title>
+            <TitleInput>Titre</TitleInput>
             <StyledTextInput
               placeholder="Titre"
               onChangeText={text => setRecipe({...recipe, title: text})}
               value={recipe.title}
+              keyboardType="default"
             />
+            <TitleInput>URL de l'image</TitleInput>
             <StyledTextInput
               placeholder="URL de l'image"
               onChangeText={text => setRecipe({...recipe, image: text})}
               value={recipe.image}
+              keyboardType="default"
             />
+            <TitleInput>Temps de préparation</TitleInput>
             <StyledTextInput
-              placeholder="Temps de préparation"
+              placeholder="Temps de préparation (en minutes)"
               onChangeText={text =>
                 setRecipe({...recipe, readyInMinutes: text})
               }
               value={recipe.readyInMinutes}
+              keyboardType="numeric"
             />
+            <TitleInput>Nombre de portions</TitleInput>
             <StyledTextInput
               placeholder="Nombre de portions"
               onChangeText={text => setRecipe({...recipe, servings: text})}
               value={recipe.servings}
+              keyboardType="numeric"
             />
+            <TitleInput>Ingrédients</TitleInput>
             <StyledTextInput
               placeholder="Ingrédients (séparés par des virgules)"
               onChangeText={text => setRecipe({...recipe, ingredients: text})}
               value={recipe.ingredients}
               multiline={true}
               numberOfLines={4}
+              keyboardType="default"
             />
+            <TitleInput>Instructions</TitleInput>
             <StyledTextInput
               placeholder="Instructions (séparées par des points)"
               onChangeText={text => setRecipe({...recipe, instructions: text})}
               value={recipe.instructions}
               multiline={true}
               numberOfLines={4}
+              keyboardType="default"
             />
             <StyledButton title="Ajouter la recette" onPress={handleSubmit} />
           </Form>
@@ -83,6 +95,11 @@ const AddRecipe = ({navigation}) => {
     </BackgroundImageView>
   );
 };
+const TitleInput = styled.Text`
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+`;
 
 const ContainerView = styled.View`
   width: 100%;
@@ -100,10 +117,7 @@ const BackgroundImageView = styled.ImageBackground`
 `;
 
 const StyledButton = styled.Button`
-  color: black;
-  border-radius: 4px;
-  padding: 12px 32px;
-  margin: 16px 0;
+  background-color: #f4511e;
 `;
 
 const Title = styled.Text`
@@ -118,14 +132,17 @@ const Title = styled.Text`
 const StyledTextInput = styled.TextInput`
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: white;
-
+  color: black;
   margin-bottom: 16px;
   padding: 8px;
 `;
 
 const Form = styled.View`
   flex: 1;
+  background-color: white;
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 `;
 
 export default AddRecipe;
