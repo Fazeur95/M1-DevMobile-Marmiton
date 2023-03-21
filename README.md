@@ -30,7 +30,7 @@ _Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadair
 - [x] Le site doit etre responsive (Mobile First)
 - [x] Avoir un système d'authentification (si nécessaire) Register / Login
 - [x] Utiliser les styled-Components
-- [x] être codé proprement (avoir une structure propre de code et bien découper ses composants)
+- [x] Être codé proprement (avoir une structure propre de code et bien découper ses composants)
 - [x] Avoir les normes récentes de code (ES6+)
 - [x] Avoir un système de retour utilisateur, notifier les succes/erreurs, faire un affichage en cas de non reponse de l’api, faire un loader durant les call API etc.
 
