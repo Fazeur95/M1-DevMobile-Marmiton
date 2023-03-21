@@ -22,7 +22,7 @@
 
 - https://spoonacular.com/food-api
 
-**Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadaire.**
+_Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadaire._
 
 ### Fait : 
 
