@@ -8,16 +8,16 @@
 
 
 #### Modules utilisés :
-- Styled-Component : npm install styled-components
-- React Navigation : npm install @react-navigation/native
-- AsyncStorage : npm install @react-native-async-storage/async-storage
-- Axios : npm install axios
-- Notifee : npm install --save @notifee/react-native
-- Firebase : npm install --save @react-native-firebase/app / npm install --save @react-native-firebase/auth
+- Styled-Component : `npm install styled-components`
+- React Navigation : `npm install @react-navigation/native`
+- AsyncStorage : `npm install @react-native-async-storage/async-storage`
+- Axios : `npm install axios`
+- Notifee : `npm install --save @notifee/react-native`
+- Firebase : `npm install --save @react-native-firebase/app` / `npm install --save @react-native-firebase/auth`
 
 
 ## Installation : 
-- `npm install`
+`npm install`
 
 ### Utilisation d'une API de recettes :
 
