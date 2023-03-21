@@ -29,14 +29,14 @@
 Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadaire. Veuillez me contactez si ce problème intervient.
 
 ### Fait : 
-- [ Avoir un routeur ]
-- Avoir un routeur
-- Le site doit etre responsive (Mobile First)
-- Avoir un système d'authentification (si nécessaire) Register / Login
-- Utiliser les styled-Components
-- être codé proprement (avoir une structure propre de code et bien découper ses composants)
-- Avoir les normes récentes de code (ES6+)
-- Avoir un système de retour utilisateur, notifier les succes/erreurs, faire un affichage en cas de non reponse de l’api, faire un loader durant les call API etc.
+- 
+- [x]  Avoir un routeur
+- [x] Le site doit etre responsive (Mobile First)
+- [x] Avoir un système d'authentification (si nécessaire) Register / Login
+- [x] Utiliser les styled-Components
+- [x] être codé proprement (avoir une structure propre de code et bien découper ses composants)
+- [x] Avoir les normes récentes de code (ES6+)
+- [x] Avoir un système de retour utilisateur, notifier les succes/erreurs, faire un affichage en cas de non reponse de l’api, faire un loader durant les call API etc.
 
 ### Bonus :
 
