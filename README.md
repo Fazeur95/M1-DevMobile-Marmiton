@@ -4,10 +4,6 @@
 ## Description
 ### Création d'une application mobile en React Native listant des recettes de cuisines et permettant d'en ajouter de nouvelles.
 
-![qemu-system-x86_64_mWlhkcrpND](https://user-images.githubusercontent.com/56970054/227198194-66088c20-addc-4a7d-825c-7489e845dd27.gif)
-
-
-
 #### Modules utilisés :
 - Styled-Component : `npm install styled-components`
 - React Navigation : `npm install @react-navigation/native`
@@ -35,6 +31,19 @@ _Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadair
 - [x] Être codé proprement (avoir une structure propre de code et bien découper ses composants)
 - [x] Avoir les normes récentes de code (ES6+)
 - [x] Avoir un système de retour utilisateur, notifier les succes/erreurs, faire un affichage en cas de non reponse de l’api, faire un loader durant les call API etc.
+
+
+Visualisation de recettes aléatoires et possibilité de voir en détail la recette selectionné :
+![qemu-system-x86_64_faEM0OwNH1](https://user-images.githubusercontent.com/56970054/227199424-b91494d2-b571-4c05-8054-40e286c0b5a7.gif)
+
+
+Système de recherche avec possibilité d'ajouter les recettes recherchées au favori :
+![qemu-system-x86_64_mWlhkcrpND](https://user-images.githubusercontent.com/56970054/227198194-66088c20-addc-4a7d-825c-7489e845dd27.gif)
+
+Page de Connexion et d'Inscription avec Firebase permettant de voir sa page profil lors de l'authentification :
+![qemu-system-x86_64_qcxEo07IxE](https://user-images.githubusercontent.com/56970054/227199934-1373e3b9-f530-48ae-804d-b8a66fa8db8e.gif)
+
+
 
 
 ### Bonus :
