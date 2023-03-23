@@ -3,7 +3,9 @@
 
 ## Description
 ### Création d'une application mobile en React Native listant des recettes de cuisines et permettant d'en ajouter de nouvelles.
-![image](https://user-images.githubusercontent.com/56970054/226587051-897a62af-f8e9-44ac-991a-b4b0d53ce9fc.png)
+
+![qemu-system-x86_64_mWlhkcrpND](https://user-images.githubusercontent.com/56970054/227198194-66088c20-addc-4a7d-825c-7489e845dd27.gif)
+
 
 
 #### Modules utilisés :
