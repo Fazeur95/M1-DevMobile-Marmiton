@@ -33,7 +33,7 @@ _Si l'API renvoie une requête 402 c'est qu'elle a atteint sa limite hebdomadair
 - [x] Avoir un système de retour utilisateur, notifier les succes/erreurs, faire un affichage en cas de non reponse de l’api, faire un loader durant les call API etc.
 
 
-Visualisation de recettes aléatoires et possibilité de voir en détail la recette selectionné :
+**Visualisation de recettes aléatoires et possibilité de voir en détail la recette selectionné :**
 ![qemu-system-x86_64_faEM0OwNH1](https://user-images.githubusercontent.com/56970054/227199424-b91494d2-b571-4c05-8054-40e286c0b5a7.gif)
 
 
@@ -42,6 +42,9 @@ Système de recherche avec possibilité d'ajouter les recettes recherchées au f
 
 Page de Connexion et d'Inscription avec Firebase permettant de voir sa page profil lors de l'authentification :
 ![qemu-system-x86_64_qcxEo07IxE](https://user-images.githubusercontent.com/56970054/227199934-1373e3b9-f530-48ae-804d-b8a66fa8db8e.gif)
+
+Page pour ajouter des recettes : 
+![qemu-system-x86_64_HnXEev3g0Y](https://user-images.githubusercontent.com/56970054/227203605-3241440b-037b-4124-8a90-ecbac7c4e71f.gif)
 
 
 
